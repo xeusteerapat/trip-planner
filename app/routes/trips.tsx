@@ -1,14 +1,26 @@
-import { redirect } from '@remix-run/node';
+import { ActionFunctionArgs, redirect } from '@remix-run/node';
 import { Form } from '@remix-run/react';
+import { db } from '~/db/db.server';
+import { trips } from '~/db/schema';
 
-export const action = async ({ request }) => {
+type NewTrip = typeof trips.$inferInsert;
+
+export const action = async ({ request }: ActionFunctionArgs) => {
   const formData = await request.formData();
-  const tripName = formData.get('tripName');
+  const tripName = formData.get('tripName') as string;
 
   // In a real app, you'd save this to a database
-  const newTripId = '123';
+  const newTrip: NewTrip = {
+    name: tripName,
+    startDate: new Date().toISOString(),
+    endDate: new Date().toISOString(),
+  };
 
-  return redirect(`/trips/${newTripId}`);
+  const result = await db.insert(trips).values(newTrip).returning({
+    insertedId: trips.id,
+  });
+
+  return redirect(`/plan/${result[0].insertedId}`);
 };
 
 export default function Add() {
@@ -17,7 +29,10 @@ export default function Add() {
       <h1 className='text-2xl font-bold'>Create a New Trip</h1>
       <Form method='post' action='/trips'>
         <div>
-          <label className='block text-sm font-medium text-gray-700'>
+          <label
+            htmlFor='tripName'
+            className='block text-sm font-medium text-gray-700'
+          >
             Trip Name
           </label>
           <input
