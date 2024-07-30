@@ -20,6 +20,9 @@ importers:
       '@remix-run/serve':
         specifier: ^2.10.2
         version: 2.10.2(typescript@5.5.3)
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       drizzle-orm:
         specifier: ^0.32.0
         version: 0.32.0(@neondatabase/serverless@0.9.4)(@types/pg@8.11.6)(@types/react@18.3.3)(react@18.3.1)
@@ -78,6 +81,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
+      tsx:
+        specifier: ^4.16.2
+        version: 4.16.2
       typescript:
         specifier: ^5.1.6
         version: 5.5.3
@@ -3619,6 +3625,11 @@ packages:
     resolution: {integrity: sha512-NoZ4roiN7LnbKn9QqE1amc9DJfzvZXxF4xDavcOWt1BPkdx+m+0gJuPM+S0vCe7zTJMYUP0R8pO2XMr+Y8oLIg==}
     engines: {node: '>=6'}
 
+  tsx@4.16.2:
+    resolution: {integrity: sha512-C1uWweJDgdtX2x600HjaFaucXTilT7tgUZHbOE4+ypskZ1OP8CRCSDkCxG6Vya9EwaFIVagWwpaVAn5wzypaqQ==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+
   turbo-stream@2.2.0:
     resolution: {integrity: sha512-FKFg7A0To1VU4CH9YmSMON5QphK0BXjSoiC7D9yMh+mEEbXLUP9qJ4hEt1qcjKtzncs1OpcnjZO8NgrlVbZH+g==}
 
@@ -4918,7 +4929,7 @@ snapshots:
       '@babel/plugin-syntax-typescript': 7.24.7(@babel/core@7.24.8)
       '@vanilla-extract/babel-plugin-debug-ids': 1.0.6
       '@vanilla-extract/css': 1.15.3
-      esbuild: 0.17.6
+      esbuild: 0.19.12
       eval: 0.1.8
       find-up: 5.0.0
       javascript-stringify: 2.1.0
@@ -7848,6 +7859,13 @@ snapshots:
       json5: 2.2.3
       minimist: 1.2.8
       strip-bom: 3.0.0
+
+  tsx@4.16.2:
+    dependencies:
+      esbuild: 0.21.5
+      get-tsconfig: 4.7.5
+    optionalDependencies:
+      fsevents: 2.3.3
 
   turbo-stream@2.2.0: {}
 
