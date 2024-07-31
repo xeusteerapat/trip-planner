@@ -1,3 +1,17 @@
+# Trip Planner
+
+Todo
+
+- Allow users to create a trip and add plans to it
+- 1 Trip can have many plans eg.
+  - Trip: Trip to the Iceland
+  - Plan: Fly to Reykjavik
+  - Plan: Drive to Kirkjufell
+  - Plan: Drive to Blue Lagoon
+- Home page should show all trips
+- Add a plan to a trip
+- Show a trip and plans
+
 # Welcome to Remix!
 
 - 📖 [Remix docs](https://remix.run/docs)
