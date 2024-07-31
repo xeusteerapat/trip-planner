@@ -34,7 +34,7 @@ const Plan = () => {
     <div>
       <h1>Plan</h1>
       <h2>{currentTrip.name}</h2>
-      return (
+
       <div className='container mx-auto p-4'>
         <h1 className='text-2xl font-bold'>{currentTrip.name}</h1>
         <h2 className='text-xl mt-4'>Plans</h2>
@@ -87,7 +87,6 @@ const Plan = () => {
           </button>
         </Form>
       </div>
-      );
       <Link to='/'>Back home</Link>
     </div>
   );
