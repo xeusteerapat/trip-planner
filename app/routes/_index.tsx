@@ -22,7 +22,7 @@ export default function Index() {
   return (
     <div className='container mx-auto p-4'>
       <h1 className='text-2xl font-bold'>Trip Planner</h1>
-      <Link to='/trips' className='text-blue-500'>
+      <Link to='/trips/new' className='text-blue-500'>
         Create a New Trip
       </Link>
       {allTrips.map((trip) => (
